@@ -308,8 +308,18 @@ config_setting(
     visibility = ["//visibility:public"],
 )
 
-config_setting(
+alias(
     name = "windows",
+    actual = select({
+        ":windows_x64": ":windows_x64",
+        ":windows_x86": ":windows_x86",
+        "//conditions:default": ":windows_x64",  # Arbitrarily chosen from above.
+    }),
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "windows_x64",
     # Internal builds query the target OS.
     flag_values = if_google(
         {"//tools/cpp:cc_target_os": "windows"},
@@ -318,6 +328,21 @@ config_setting(
     # OSS builds query the CPU type.
     values = if_oss(
         {"cpu": "x64_windows"},
+        {},
+    ),
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "windows_x86",
+    # Internal builds query the target OS.
+    flag_values = if_google(
+        {"//tools/cpp:cc_target_os": "windows"},
+        {},
+    ),
+    # OSS builds query the CPU type.
+    values = if_oss(
+        {"cpu": "x64_x86_windows"},
         {},
     ),
     visibility = ["//visibility:public"],

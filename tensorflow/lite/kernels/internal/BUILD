@@ -205,13 +205,25 @@ config_setting(
     },
 )
 
-config_setting(
+alias(
     name = "windows",
-    values = {
-        "cpu": "x64_windows",
-    },
+    actual = select({
+        ":windows_x64": ":windows_x64",
+        ":windows_x86": ":windows_x86",
+        "//conditions:default": ":windows_x64",  # Arbitrarily chosen from above.
+    }),
+    visibility = ["//visibility:public"],
 )
 
+config_setting(
+    name = "windows_x64",
+    values = {"cpu": "x64_windows"},
+)
+
+config_setting(
+    name = "windows_x86",
+    values = {"cpu": "x64_x86_windows"},
+)
 config_setting(
     name = "raspberry_pi_with_neon",
     define_values = {

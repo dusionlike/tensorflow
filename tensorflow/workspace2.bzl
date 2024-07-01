@@ -130,9 +130,9 @@ def _tf_repositories():
     # LINT.IfChange
     tf_http_archive(
         name = "XNNPACK",
-        sha256 = "21cf16fb50c32682b8548cde83933bbd90b884983c50b9db7550002a72a75ad5",
-        strip_prefix = "XNNPACK-8e3d3359f9bec608e09fac1f7054a2a14b1bd73c",
-        urls = tf_mirror_urls("https://github.com/google/XNNPACK/archive/8e3d3359f9bec608e09fac1f7054a2a14b1bd73c.zip"),
+        sha256 = "82fcf4d48451036c761349f1aea7f2bbf8f4cceda127ef568ebdade91784b4d8",
+        strip_prefix = "XNNPACK-8ea370132ec72b903a794a374baf401e13512866",
+        urls = tf_mirror_urls("https://github.com/dusionlike/XNNPACK/archive/8ea370132ec72b903a794a374baf401e13512866.zip"),
     )
     # LINT.ThenChange(//tensorflow/lite/tools/cmake/modules/xnnpack.cmake)
 
@@ -145,23 +145,23 @@ def _tf_repositories():
 
     tf_http_archive(
         name = "pthreadpool",
-        sha256 = "b96413b10dd8edaa4f6c0a60c6cf5ef55eebeef78164d5d69294c8173457f0ec",
-        strip_prefix = "pthreadpool-b8374f80e42010941bda6c85b0e3f1a1bd77a1e0",
-        urls = tf_mirror_urls("https://github.com/Maratyszcza/pthreadpool/archive/b8374f80e42010941bda6c85b0e3f1a1bd77a1e0.zip"),
+        sha256 = "8ff302b630d22f0935b9805a84f9b2b7d16953ad269b93d30971f16b6167db87",
+        strip_prefix = "pthreadpool-63281515c5240ceae8278df2a97aa2c75a5fbd0d",
+        urls = tf_mirror_urls("https://github.com/dusionlike/pthreadpool/archive/63281515c5240ceae8278df2a97aa2c75a5fbd0d.zip"),
     )
 
     tf_http_archive(
         name = "clog",
-        strip_prefix = "cpuinfo-5e63739504f0f8e18e941bd63b2d6d42536c7d90",
-        sha256 = "18eca9bc8d9c4ce5496d0d2be9f456d55cbbb5f0639a551ce9c8bac2e84d85fe",
-        urls = tf_mirror_urls("https://github.com/pytorch/cpuinfo/archive/5e63739504f0f8e18e941bd63b2d6d42536c7d90.tar.gz"),
+        strip_prefix = "cpuinfo-6a95c35fa9be7fe0701f93c3359b31a5df146872",
+        sha256 = "fb9f2a610c56917cbcdabbf3d1e67db4590415643c04909fb5585795d3713229",
+        urls = tf_mirror_urls("https://github.com/dusionlike/cpuinfo/archive/6a95c35fa9be7fe0701f93c3359b31a5df146872.zip"),
     )
 
     tf_http_archive(
         name = "cpuinfo",
-        strip_prefix = "cpuinfo-5e63739504f0f8e18e941bd63b2d6d42536c7d90",
-        sha256 = "18eca9bc8d9c4ce5496d0d2be9f456d55cbbb5f0639a551ce9c8bac2e84d85fe",
-        urls = tf_mirror_urls("https://github.com/pytorch/cpuinfo/archive/5e63739504f0f8e18e941bd63b2d6d42536c7d90.tar.gz"),
+        strip_prefix = "cpuinfo-6a95c35fa9be7fe0701f93c3359b31a5df146872",
+        sha256 = "fb9f2a610c56917cbcdabbf3d1e67db4590415643c04909fb5585795d3713229",
+        urls = tf_mirror_urls("https://github.com/dusionlike/cpuinfo/archive/6a95c35fa9be7fe0701f93c3359b31a5df146872.zip"),
     )
 
     tf_http_archive(
@@ -483,9 +483,9 @@ def _tf_repositories():
 
     tf_http_archive(
         name = "com_github_gflags_gflags",
-        sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
-        strip_prefix = "gflags-2.2.2",
-        urls = tf_mirror_urls("https://github.com/gflags/gflags/archive/v2.2.2.tar.gz"),
+        sha256 = "bbf43b268e9550a5edaee1345fe3ab09ad26bb69f306e696f752b3891baad7ab",
+        strip_prefix = "gflags-c9cea258d613714d80a40a664736bd2b33cdc00e",
+        urls = tf_mirror_urls("https://github.com/dusionlike/gflags/archive/c9cea258d613714d80a40a664736bd2b33cdc00e.zip"),
     )
 
     tf_http_archive(
