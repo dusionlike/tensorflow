@@ -16,6 +16,12 @@
 cmake_minimum_required(VERSION 3.16)
 project(tensorflow-lite-c C CXX)
 
+if(MSVC)
+  add_compile_options(/MP)
+  add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>") 
+  add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/execution-charset:utf-8>")
+endif()
+
 option(TFLITE_C_BUILD_SHARED_LIBS "Build shared libraries" ON)
 
 set(TENSORFLOW_SOURCE_DIR "" CACHE PATH
@@ -74,6 +80,8 @@ add_library(tensorflowlite_c ${TFLITE_C_LIBTYPE}
   c_api_types.h
   common.h
 )
+
+target_compile_definitions(tensorflowlite_c PRIVATE BUILDING_TENSORFLOW_C)
 
 if (TFLITE_C_BUILD_SHARED_LIBS)
   if (WIN32)
